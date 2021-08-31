@@ -111,6 +111,12 @@ step51_6000 graphql_back_init:
 	mkdir app.d/graphql-node && cd app.d/graphql-node && npm init -y && mkdir src && touch src/index.js
 	cd app.d/graphql-node && npm i apollo-server graphql
 
+step51_6001 graphql_back_test_1:
+	curl --request POST \
+    --header 'content-type: application/json' \
+    --url http://localhost:4000 \
+    --data '{"query":"query ExampleQuery {\n  info\n}"}'
+
 #####################################################
 ## Functional Programming Typescript / Javascript
 #step46_1000 node_typescript_init:
