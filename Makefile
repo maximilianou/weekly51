@@ -99,14 +99,18 @@ step49_2999 app1_ns_delete:
 
 #####################################################
 ## Typescript
-step49_5000 ts_init:
-	mkdir -p programming/ts01 && cd programming/ts01 && npm -y init 
-	cd programming/ts01 && npm i -D typescript ts-node
-	cd programming/ts01 && ./node_modules/.bin/tsc --init
-	cd programming/ts01 && npm i -D jest ts-jest @types/jest
-	cd programming/ts01 && npm i -D babel-jest @babel/core @babel/preset-env @babel/preset-typescript 
-	cd programming/ts01 && npx ts-jest config:init
-	
+step51_5000 ts_init:
+	mkdir -p app.d/ts01 && cd app.d/ts01 && npm -y init 
+	cd app.d/ts01 && npm i -D typescript ts-node
+	cd app.d/ts01 && ./node_modules/.bin/tsc --init
+	cd app.d/ts01 && npm i -D jest ts-jest @types/jest
+	cd app.d/ts01 && npm i -D babel-jest @babel/core @babel/preset-env @babel/preset-typescript 
+	cd app.d/ts01 && npx ts-jest config:init
+
+step51_6000 graphql_back_init:
+	mkdir app.d/graphql-node && cd app.d/graphql-node && npm init -y && mkdir src && touch src/index.js
+	cd app.d/graphql-node && npm i apollo-server graphql
+
 #####################################################
 ## Functional Programming Typescript / Javascript
 #step46_1000 node_typescript_init:

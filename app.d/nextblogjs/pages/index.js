@@ -1,9 +1,18 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Layout } from 'react'
 import styles from '../styles/Home.module.css'
 import { getSortedPostsData } from '../lib/posts'
-export async function getStaticProps(){
+
+////////////////////////
+//////////////////////// Typyescript 
+// import { GetStaticPaths } from 'next'
+// 
+// export const getStaticPaths: GetStaticPaths = async () => {
+//   // ...
+// }
+////////////////////////
+///////////////////// Once!! build time called.
+export async function getStaticProps(){ 
   const allPostsData = getSortedPostsData()
   return {
     props: {
@@ -11,6 +20,33 @@ export async function getStaticProps(){
     }
   }
 }
+////////////////////////
+//////////////////////// Each!! request time called.
+// function Page({ data }) {
+//   // Render data...
+// }
+// // This gets called on every request
+// export async function getServerSideProps() {
+//   // Fetch data from external API
+//   const res = await fetch(`https://.../data`)
+//   const data = await res.json()
+// 
+//   // Pass data to the page via props
+//   return { props: { data } }
+// } 
+// export default Page
+////////////////////////
+//////////////////// React hook for data fetching, Next.js
+//import useSWR from 'swr'
+//
+//function Profile() {
+//  const { data, error } = useSWR('/api/user', fetch)
+//
+//  if (error) return <div>failed to load</div>
+//  if (!data) return <div>loading...</div>
+//  return <div>hello {data.name}!</div>
+//}
+/////////////////////////////////////
 export default function Home({ allPostsData }) { 
   return (
     <div className={styles.container}>
