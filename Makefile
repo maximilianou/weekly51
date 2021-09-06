@@ -6,6 +6,7 @@ include .env
 servers-exec-cmd!=hostname  ## execute command and set stdout to variable server
 servers-exec-usr-id!=id  ## execute command and set stdout to variable server
 
+
 .PHONY: view-hostname
 step00 view-hostname:
 	@echo $(servers-exec-cmd)
